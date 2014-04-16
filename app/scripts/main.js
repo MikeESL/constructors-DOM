@@ -21,6 +21,7 @@ function FighterTwo (name, weapon){
 		this.addDamage = function(weapon){
 				if (this.life <= 0)
 		}
+		this.life = this.life - weapon.damge;
 }
 function Weapon (type, damage){
 		this.type = type || "fist";
@@ -30,68 +31,15 @@ function Weapon (type, damage){
 
 		}
 };
+var crowbar = new Weapon ("crowbar" 20);
+var knife = new Weapon ("knife", 40);
+var gun = new Weapon ("gun", 60);
+var bazooka = new Weapon ("bazzoka", 100);
+var clint = new FighterOne("clint", crowbar);
+var harry = new FighterTwo("harry", gun);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 //attempt to get 3 constructors intetacting. Abandoned for now
 // function Monster (name, weapon) {
 // 		this.name = name;
@@ -164,4 +112,3 @@ function Weapon (type, damage){
 
 
 
-});
