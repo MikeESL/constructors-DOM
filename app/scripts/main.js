@@ -1,27 +1,28 @@
 console.log('\'Allo \'Allo!');
-$ (document).ready (function(){
+//$ (document).ready (function(){
 
 // start with 'get started' button, later
 
 //constructors, to kick this off
-function FighterOne (name, weapon){
+function FighterOne (name){
 		this.name = name;
 		this.life = 100;
 		this.addDamage = function (weapon){
 				if (this.life <= 0){
 					alert (this.name + "died. Game Over");
 				}
-				this.life = this.life - weapon.damge;
+				this.life = this.life - weapon.damage;
 };
 }
 
-function FighterTwo (name, weapon){
+function FighterTwo (name){
 		this.name = name;
 		this.life = 100;
 		this.addDamage = function(weapon){
-				if (this.life <= 0)
+				if (this.life <= 0){
 		}
-		this.life = this.life - weapon.damge;
+		this.life = this.life - weapon.damage;
+};
 }
 function Weapon (type, damage){
 		this.type = type || "fist";
@@ -31,15 +32,15 @@ function Weapon (type, damage){
 
 		}
 };
-var crowbar = new Weapon ("crowbar" 20);
+var crowbar = new Weapon ("crowbar", 20);
 var knife = new Weapon ("knife", 40);
 var gun = new Weapon ("gun", 60);
 var bazooka = new Weapon ("bazzoka", 100);
-var clint = new FighterOne("clint", crowbar);
-var harry = new FighterTwo("harry", gun);
+var clint = new FighterOne("clint");
+var harry = new FighterTwo("harry");
 
+//});
 
-});
 //attempt to get 3 constructors intetacting. Abandoned for now
 // function Monster (name, weapon) {
 // 		this.name = name;
@@ -63,7 +64,7 @@ var harry = new FighterTwo("harry", gun);
 // };
 // }
 // ,
-// function Weapon (name, spell) {
+// function Wizard (name, spell) {
 // 	this.name = name;
 // 	this.isWizard = true;
 // 	this.spellOne = function(Monster){
