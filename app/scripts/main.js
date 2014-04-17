@@ -10,7 +10,7 @@ function FighterOne (name, weapon){
 		this.addDamage = function (weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
-				alert (this.name + "died. Game Over");
+				alert (this.name + " died. Game Over");
 				}
 				
 };
@@ -22,7 +22,7 @@ function FighterTwo (name, weapon){
 		this.addDamage = function(weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
-				alert (this.name + "died. Game Over");
+				alert (this.name + " died. Game Over");
 		}
 		
 };
