@@ -2,7 +2,14 @@ console.log('\'Allo \'Allo!');
 //$ (document).ready (function(){
 
 // start with 'get started' button, later
-
+// enable calling of the function from the form???? 
+function doIt(){     
+       window.location.href = document.getElementById('fightGame').value;
+    }   
+    document.onkeypress=function(e){
+        var e=window.event || e;        
+        if(e.keyCode===13) doIt();       
+    };
 //constructors, to kick this off
 function FighterOne (name, weapon){
 		this.name = name;
@@ -11,6 +18,7 @@ function FighterOne (name, weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
 				alert (this.name + " died. Game Over");
+				console.log (this.life);
 				}
 				
 };
@@ -23,6 +31,7 @@ function FighterTwo (name, weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
 				alert (this.name + " died. Game Over");
+				console.log (this.life);
 		}
 		
 };
