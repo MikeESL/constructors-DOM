@@ -1,37 +1,55 @@
-console.log('\'Allo \'Allo!');
-//$ (document).ready (function(){
+//var grizzly = new Monster("Grizzly Jenkins", "blue");
+$(document).ready(function() {
+	//var home = new Page("home", shows);
+	$(".FighterOne").click(function(e) {
+		e.preventDefault();
+		clint.weapon.fire(harry);
+		console.log ("harry has " + harry.life + " points of life left");
+		$(".FighterOneResult").append("harry has " + harry.life + " points of life left" );
+});		
+	$(".FighterTwo").click(function(e) {
+		e.preventDefault();
+		harry.weapon.fire(clint);
+		console.log ("clint has " + clint.life + " points of life left");
+		$(".FighterTwoResult").append("clint has " + clint.life + " points of life left" );
+		//console.log($("input").val());
+		//grizzly.addImage($(".container"), grizzly);
+	});
+	//home.addToDom($(".shows"), shows);
+	//$(".tweets").append(home.generateMarkup(tweets));
 
-// start with 'get started' button, later
-// enable calling of the function from the form???? 
-function doIt(){     
-       window.location.href = document.getElementById('fightGame').value;
-    }   
-    document.onkeypress=function(e){
-        var e=window.event || e;        
-        if(e.keyCode===13) doIt();       
-    };
-//constructors, to kick this off
+});
+
+
 function FighterOne (name, weapon){
 		this.name = name;
+		this.weapon = weapon;
+		//this.weapon={
+			//typeWeapon: typeWeapon,
+				//damage: 
+									//}
 		this.life = 100;
+	//	this.fire = function(FighterTwo)
 		this.addDamage = function (weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
 				alert (this.name + " died. Game Over");
-				console.log (this.life);
+				
 				}
 				
 };
 }
 
+
 function FighterTwo (name, weapon){
 		this.name = name;
+		this.weapon = weapon;
 		this.life = 100;
 		this.addDamage = function(weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
 				alert (this.name + " died. Game Over");
-				console.log (this.life);
+				
 		}
 		
 };
@@ -47,9 +65,10 @@ function Weapon (type, damage){
 var crowbar = new Weapon ("crowbar", 20);
 var knife = new Weapon ("knife", 40);
 var gun = new Weapon ("gun", 60);
-var bazooka = new Weapon ("bazzoka", 100);
+var bazooka = new Weapon ("bazooka", 100);
 var clint = new FighterOne("clint", crowbar);
 var harry = new FighterTwo("harry", gun);
+var mike = new FighterOne ("mike");
 
 // another try at this:
 // function FighterOne (name){
