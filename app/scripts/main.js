@@ -4,24 +4,27 @@ console.log('\'Allo \'Allo!');
 // start with 'get started' button, later
 
 //constructors, to kick this off
-function FighterOne (name){
+function FighterOne (name, weapon){
 		this.name = name;
 		this.life = 100;
 		this.addDamage = function (weapon){
-				if (this.life <= 0){
-					alert (this.name + "died. Game Over");
-				}
 				this.life = this.life - weapon.damage;
+				if (this.life <= 0){
+				alert (this.name + "died. Game Over");
+				}
+				
 };
 }
 
-function FighterTwo (name){
+function FighterTwo (name, weapon){
 		this.name = name;
 		this.life = 100;
 		this.addDamage = function(weapon){
+				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
+				alert (this.name + "died. Game Over");
 		}
-		this.life = this.life - weapon.damage;
+		
 };
 }
 function Weapon (type, damage){
@@ -36,8 +39,44 @@ var crowbar = new Weapon ("crowbar", 20);
 var knife = new Weapon ("knife", 40);
 var gun = new Weapon ("gun", 60);
 var bazooka = new Weapon ("bazzoka", 100);
-var clint = new FighterOne("clint");
-var harry = new FighterTwo("harry");
+var clint = new FighterOne("clint", crowbar);
+var harry = new FighterTwo("harry", gun);
+
+// another try at this:
+// function FighterOne (name){
+// 		this.name = name;
+// 		this.life = 100;
+// 		this.addDamage = function (weapon){
+// 				if (this.life <= 0){
+// 					alert (this.name + "died. Game Over");
+// 				}
+// 				this.life = this.life - weapon.damage;
+// };
+// }
+
+// function FighterTwo (name){
+// 		this.name = name;
+// 		this.life = 100;
+// 		this.addDamage = function(weapon){
+// 				if (this.life <= 0){
+// 		}
+// 		this.life = this.life - weapon.damage;
+// };
+// }
+// function Weapon (type, damage){
+// 		this.type = type || "fist";
+// 		this.damage = damage || 5;
+// 		this.fire = function (target){
+// 			target.addDamage(this);
+
+// 		}
+// };
+// var crowbar = new Weapon ("crowbar", 20);
+// var knife = new Weapon ("knife", 40);
+// var gun = new Weapon ("gun", 60);
+// var bazooka = new Weapon ("bazzoka", 100);
+// var clint = new FighterOne("clint");
+// var harry = new FighterTwo("harry");
 
 //});
 
