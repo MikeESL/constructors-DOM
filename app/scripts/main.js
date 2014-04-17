@@ -1,6 +1,6 @@
-//var grizzly = new Monster("Grizzly Jenkins", "blue");
+
 $(document).ready(function() {
-	//var home = new Page("home", shows);
+	
 	$(".FighterOne").click(function(e) {
 		e.preventDefault();
 		clint.weapon.fire(harry);
@@ -12,11 +12,9 @@ $(document).ready(function() {
 		harry.weapon.fire(clint);
 		console.log ("clint has " + clint.life + " points of life left");
 		$(".FighterTwoResult").append("clint has " + clint.life + " points of life left" );
-		//console.log($("input").val());
-		//grizzly.addImage($(".container"), grizzly);
+		
 	});
-	//home.addToDom($(".shows"), shows);
-	//$(".tweets").append(home.generateMarkup(tweets));
+	
 
 });
 
