@@ -4,14 +4,15 @@ $(document).ready(function() {
 	$(".FighterOne").click(function(e) {
 		e.preventDefault();
 		clint.weapon.fire(harry);
-		console.log ("harry has " + harry.life + " points of life left");
-		$(".FighterOneResult").append("harry has " + harry.life + " points of life left" );
+		//console.log ("harry has " + harry.life + " points of life left");
+		$(".FighterOneResult").append(" Harry has " + harry.life + " points of life left. " );
+		
 });		
 	$(".FighterTwo").click(function(e) {
 		e.preventDefault();
 		harry.weapon.fire(clint);
-		console.log ("clint has " + clint.life + " points of life left");
-		$(".FighterTwoResult").append("clint has " + clint.life + " points of life left" );
+		//console.log ("clint has " + clint.life + " points of life left");
+		$(".FighterTwoResult").append(" Clint has " + clint.life + " points of life left. " );
 		
 	});
 	
@@ -31,12 +32,19 @@ function FighterOne (name, weapon){
 		this.addDamage = function (weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
-				alert (this.name + " died. Game Over");
+				//alert (this.name + " died. Game Over");
+				$(".FighterTwoResultImg").append("<img src=\"images/dirtyharry.png\">");
 				
 				}
 				
 };
 }
+
+// FighterOne.prototype.addDamage = function($el, weapon) {
+// 	  var damagePath = $(".FighterTwoResultImg").val();
+// 	  var endDamage = damagePath + "<img src=\"images/dirtyharry.png\">";
+// 		$el.append(endDamage);
+// 	};
 
 
 function FighterTwo (name, weapon){
@@ -46,25 +54,34 @@ function FighterTwo (name, weapon){
 		this.addDamage = function(weapon){
 				this.life = this.life - weapon.damage;
 				if (this.life <= 0){
-				alert (this.name + " died. Game Over");
+				//alert (this.name + " died. Game Over");
+				$(".FighterOneResultImg").append("<img src=\"images/dirtyharry.png\">");
 				
 		}
 		
 };
 }
+
+// FighterTwo.prototype.addDamage = function($el, weapon) {
+// 	  var damagePath = $(".FighterOneResultImg").val();
+// 	  var endDamage = damagePath + "<img src=\"images/dirtyharry.png\">";
+// 		$el.append(endDamage);
+// };
+
+
 function Weapon (type, damage){
-		this.type = type || "fist";
-		this.damage = damage || 5;
+		this.type = type || "nothing";
+		this.damage = damage || 1;
 		this.fire = function (target){
 			target.addDamage(this);
 
 		}
 };
-var crowbar = new Weapon ("crowbar", 20);
+var fist = new Weapon ("fist", 10);
 var knife = new Weapon ("knife", 40);
-var gun = new Weapon ("gun", 60);
+var gun = new Weapon ("gun", 50);
 var bazooka = new Weapon ("bazooka", 100);
-var clint = new FighterOne("clint", crowbar);
+var clint = new FighterOne("clint", fist);
 var harry = new FighterTwo("harry", gun);
 var mike = new FighterOne ("mike");
 
